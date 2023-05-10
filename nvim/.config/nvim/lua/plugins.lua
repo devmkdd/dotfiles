@@ -44,14 +44,31 @@ return require('packer').startup(function(use)
 
   use { "catppuccin/nvim", as = "catppuccin" }	-- UI Color Scheme
   use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional
-  },
-  config = function()
-    require("nvim-tree").setup {}
-  end
-}
+	  'nvim-tree/nvim-tree.lua',
+	  requires = {
+		  'nvim-tree/nvim-web-devicons', -- optional
+	  },
+	  config = function()
+		  require("nvim-tree").setup({
+			  sort_by = "case_sensitive",
+			  view = {
+				  width = 30,
+			  },
+			  renderer = {
+				  group_empty = true,
+			  },
+			  filters = {
+				  dotfiles = false,
+			  },
+		  })
+	  end
+  }
+  use { 
+	  "feline-nvim/feline.nvim",
+	  config= function()
+		  require("feline").setup()
+	  end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
