@@ -64,6 +64,28 @@ return require('packer').startup(function(use)
 	  end
   }
 
+  -- Custom Status bar at the bottom
+  use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = {
+		  'nvim-tree/nvim-web-devicons',
+		  opt = true
+	  },
+	  config = function()
+		  require('lualine').setup {
+			  options = {
+				  icons_enabled = true,
+				  theme = 'catppuccin',
+				  sections = {
+					  lualine_a = { },
+					  lualine_b = { },
+					  lualine_x = {'filetype'}
+				  }
+			  }
+		  }
+	  end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
