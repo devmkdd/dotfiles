@@ -6,7 +6,7 @@ vim.opt.colorcolumn = '120'		-- str: Show colored column for max line length
 vim.opt.number = true			-- bool: show line numbers
 vim.opt.relativenumber = true		-- bool: show relative linenumbers
 vim.opt.scrolloff = 4			-- number: minimal number of screenlines that will stay
-vim.opt.termguicolors = false		-- bool: use terminal colors for more available colors
+vim.opt.termguicolors = true		-- bool: use terminal colors for more available colors
 
 --[[ Theme ]]
 vim.opt.syntax = "on"			-- str: Allow syntax highlighting
