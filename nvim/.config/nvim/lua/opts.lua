@@ -7,6 +7,7 @@ vim.opt.number = true			-- bool: show line numbers
 vim.opt.relativenumber = true		-- bool: show relative linenumbers
 vim.opt.scrolloff = 4			-- number: minimal number of screenlines that will stay
 vim.opt.termguicolors = true		-- bool: use terminal colors for more available colors
+vim.opt.showmode = false		-- bool: show or hide mode info in commandline
 
 --[[ Theme ]]
 vim.opt.syntax = "on"			-- str: Allow syntax highlighting
