@@ -75,7 +75,7 @@ return require('packer').startup(function(use)
 		  require('lualine').setup {
 			  options = {
 				  icons_enabled = true,
-				  theme = 'catppuccin',
+				  theme = 'auto',
 				  section_separators = {
 					  left = '',
 					  right = ''
@@ -84,16 +84,24 @@ return require('packer').startup(function(use)
 					  left = '',
 					  right = ''
 				  },
-				  sections = {
-					  lualine_a = {},
-					  lualine_b = {},
-					  lualine_c = {},
-					  lualine_x = {},
-					  lualine_x = {},
-					  lualine_y = {},
-					  lualine_z = {}
-				  }
-			  }
+			  },
+			  sections = {
+				  lualine_a = { 'mode' },
+				  lualine_b = {'filename','location'},
+				  lualine_c = {},
+				  lualine_x = {'filetype', 'encoding'},
+				  lualine_z = {
+					  {
+						  'branch',
+						  icon = {
+							  '',
+							  align='right'
+						  }
+					  }
+				  },
+				  lualine_y = { 'diff' }
+			  },
+			  extensions = { 'nvim-tree' }
 		  }
 	  end
   }
