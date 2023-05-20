@@ -1,4 +1,4 @@
---[[ opts.lua ]]
+--[[ options.lua ]]
 
 -- [[ Context ]]
 vim.opt.signcolumn = "yes"		-- str: Show or hide the column for max line lenght
@@ -9,6 +9,7 @@ vim.opt.scrolloff = 4			-- number: minimal number of screenlines that will stay
 vim.opt.termguicolors = true		-- bool: use terminal colors for more available colors
 vim.opt.showmode = false		-- bool: show or hide mode info in commandline
 vim.opt.cursorline = true		-- bool: show ot hide the current cursor line
+vim.opt.tabstop = 2
 
 --[[ Theme ]]
 vim.opt.syntax = "on"			-- str: Allow syntax highlighting

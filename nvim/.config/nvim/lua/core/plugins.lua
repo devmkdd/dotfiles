@@ -41,70 +41,15 @@ return require('packer').startup(function(use)
 
   use "nvim-lua/popup.nvim" 			-- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" 			-- Useful lua functions used ny lots of plugins
-
   use { "catppuccin/nvim", as = "catppuccin" }	-- UI Color Scheme
   use {
 	  'nvim-tree/nvim-tree.lua',
 	  requires = {
 		  'nvim-tree/nvim-web-devicons', -- optional
 	  },
-	  config = function()
-		  require("nvim-tree").setup({
-			  sort_by = "case_sensitive",
-			  view = {
-				  width = 30,
-			  },
-			  renderer = {
-				  group_empty = true,
-			  },
-			  filters = {
-				  dotfiles = false,
-			  },
-		  })
-	  end
-  }
-
+  }  
   -- Custom Status bar at the bottom
-  use {
-	  'nvim-lualine/lualine.nvim',
-	  requires = {
-		  'nvim-tree/nvim-web-devicons',
-		  opt = true
-	  },
-	  config = function()
-		  require('lualine').setup {
-			  options = {
-				  icons_enabled = true,
-				  theme = 'auto',
-				  section_separators = {
-					  left = '',
-					  right = ''
-				  },
-				  component_separators = {
-					  left = '',
-					  right = ''
-				  },
-			  },
-			  sections = {
-				  lualine_a = { 'mode' },
-				  lualine_b = {'filename','location'},
-				  lualine_c = {},
-				  lualine_x = {'filetype', 'encoding'},
-				  lualine_z = {
-					  {
-						  'branch',
-						  icon = {
-							  '',
-							  align='right'
-						  }
-					  }
-				  },
-				  lualine_y = { 'diff' }
-			  },
-			  extensions = { 'nvim-tree' }
-		  }
-	  end
-  }
+  use 'nvim-lualine/lualine.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
