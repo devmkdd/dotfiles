@@ -51,6 +51,11 @@ return require('packer').startup(function(use)
   -- Custom Status bar at the bottom
   use 'nvim-lualine/lualine.nvim'
 
+	use {
+					"vinnymeller/swagger-preview.nvim",
+					run = "npm install -g swagger-ui-watcher",
+	}
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
