@@ -47,7 +47,15 @@ return require('packer').startup(function(use)
 	  requires = {
 		  'nvim-tree/nvim-web-devicons', -- optional
 	  },
-  }  
+  }
+
+
+	-- Telescope as fuzzy finder
+	use {
+					'nvim-telescope/telescope.nvim', tag = '0.1.1',
+					requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
   -- Custom Status bar at the bottom
   use 'nvim-lualine/lualine.nvim'
 
