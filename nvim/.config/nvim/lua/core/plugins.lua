@@ -56,7 +56,14 @@ return require('packer').startup(function(use)
 					requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-  -- Custom Status bar at the bottom
+  -- Add bufferline for holding buffers in tabs
+	use {
+					'akinsho/bufferline.nvim',
+					tag = "*", 
+					requires = 'nvim-tree/nvim-web-devicons'
+	}
+
+	-- Custom Status bar at the bottom
   use 'nvim-lualine/lualine.nvim'
 
 	use {
