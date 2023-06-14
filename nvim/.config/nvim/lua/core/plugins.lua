@@ -71,6 +71,23 @@ return require('packer').startup(function(use)
 					run = "npm install -g swagger-ui-watcher",
 	}
 
+
+
+	-- Plugins for previewung markdown
+	-- preview in browser
+	use ({
+					"iamcco/markdown-preview.nvim",
+				    run = function() vim.fn["mkdp#util#install"]() end,
+		})
+
+
+	-- preview in neovim
+	use {
+					"ellisonleao/glow.nvim",
+					config = function() require("glow").setup() end
+	}
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
