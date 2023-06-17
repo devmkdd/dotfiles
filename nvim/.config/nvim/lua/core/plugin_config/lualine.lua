@@ -12,10 +12,11 @@ require('lualine').setup {
 					},
 	},
 	sections = {
-					lualine_a = { 'mode' },
-				  lualine_b = {'filename','location'},
+					lualine_a = { 'mode' },										-- show the current vim mode
+	--			  lualine_b = {'filename','location'},		-- show current file in buffer with location
+					lualine_b = {},			
 				  lualine_c = {},
-				  lualine_x = {'filetype', 'encoding'},
+				  lualine_x = {'filetype', 'encoding'},			-- show type of current file and its encoding
 				  lualine_z = {
 									{
 													'branch',
