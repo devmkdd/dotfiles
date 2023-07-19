@@ -14,7 +14,7 @@ vim.g.loaded_netrwPlugin = 1
 -- IMPORTS
 require('core.variables')				-- Variables
 require('core.options')					-- Options
--- require('keys')							-- Keymaps
+require('core.keymappings')	  	-- Keymaps
 require('core.plugins')					-- Plugins
 require('core.plugin_config')
 --colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha"
