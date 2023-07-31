@@ -36,6 +36,7 @@ packer.init({
 -- Install your plugins here
 return require('packer').startup(function(use)
   
+
 	-- My plugins here
   use 'wbthomason/packer.nvim' 			-- Have packer manage itself
 
@@ -54,6 +55,15 @@ return require('packer').startup(function(use)
 	use {
 					'nvim-telescope/telescope.nvim', tag = '0.1.1',
 					requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
+	-- Treesitter for better syntax highlighting
+	use {
+					'nvim-treesitter/nvim-treesitter',
+					run = function()
+									local ts_update = require('nvim-treesitter.install').update({with_sync = true})
+									ts_update()
+					end,
 	}
 
   -- Add bufferline for holding buffers in tabs
