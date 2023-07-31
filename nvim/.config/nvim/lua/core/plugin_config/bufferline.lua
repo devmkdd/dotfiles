@@ -15,6 +15,7 @@ bufferline.setup{
 												style = "none",
 								},
 								modified_icon = "",
+								tab_size = 25,
 	--			},
 --				highlights = require("catppuccin.groups.integrations.bufferline").get {
 				}
