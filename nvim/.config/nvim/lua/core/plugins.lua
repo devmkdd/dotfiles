@@ -42,7 +42,14 @@ return require('packer').startup(function(use)
 
   use "nvim-lua/popup.nvim" 			-- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" 			-- Useful lua functions used ny lots of plugins
-  use { "catppuccin/nvim", as = "catppuccin" }	-- UI Color Scheme
+  
+-- Color Scheme
+	use {
+					"catppuccin/nvim",
+					tag = 'v1.3.0',
+					as = "catppuccin"
+	}
+
   use {
 	  'nvim-tree/nvim-tree.lua',
 	  requires = {
@@ -53,13 +60,15 @@ return require('packer').startup(function(use)
 
 	-- Telescope as fuzzy finder
 	use {
-					'nvim-telescope/telescope.nvim', tag = '0.1.1',
+					'nvim-telescope/telescope.nvim',
+					tag = '0.1.2',
 					requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
 	-- Treesitter for better syntax highlighting
 	use {
 					'nvim-treesitter/nvim-treesitter',
+					tag = 'v0.9.0',
 					run = function()
 									local ts_update = require('nvim-treesitter.install').update({with_sync = true})
 									ts_update()
@@ -69,7 +78,7 @@ return require('packer').startup(function(use)
   -- Add bufferline for holding buffers in tabs
 	use {
 					'akinsho/bufferline.nvim',
-					tag = "*", 
+					tag = "v4.3.0", 
 					requires = 'nvim-tree/nvim-web-devicons'
 	}
 
