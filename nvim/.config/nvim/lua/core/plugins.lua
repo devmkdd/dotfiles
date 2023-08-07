@@ -90,7 +90,8 @@ return require('packer').startup(function(use)
 					run = "npm install -g swagger-ui-watcher",
 	}
 
-
+	-- Zettelkasten plugon for neovim
+	use 'mickael-menu/zk-nvim'
 
 	-- Plugins for previewung markdown
 	-- preview in browser
