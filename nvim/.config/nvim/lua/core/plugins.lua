@@ -63,7 +63,16 @@ return require('packer').startup(function(use)
 	use {
 					'nvim-telescope/telescope.nvim',
 					tag = '0.1.2',
-					requires = { {'nvim-lua/plenary.nvim'} }
+					requires = {
+									{'nvim-lua/plenary.nvim'},
+									{
+													'nvim-telescope/telescope-live-grep-args.nvim',
+													commit = '0f75ea809c46af8997c64f49c52e3c641d887885', -- master branch for 05.04.2023
+									},			-- used to pass arguments for filtering like filetype into live grep
+					},
+					config = function()
+									require('telescope').load_extension('live_grep_args')
+					end
 	}
 
 	-- Treesitter for better syntax highlighting
