@@ -11,4 +11,6 @@ vim.g.maplocalleader = ""
 
 -- Definitions for telescope in normal mode
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts)
+--keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts) -- default call for live grep without custom arguments
+keymap("n", "<leader>lg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",opts)
+
