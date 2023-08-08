@@ -40,8 +40,8 @@ return require('packer').startup(function(use)
 	-- My plugins here
   use 'wbthomason/packer.nvim' 			-- Have packer manage itself
 
-  use "nvim-lua/popup.nvim" 			-- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" 			-- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim" 				-- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" 			-- Useful lua functions used by lots of plugins
   
 -- Color Scheme
 	use {
@@ -51,10 +51,11 @@ return require('packer').startup(function(use)
 	}
 
   use {
-	  'nvim-tree/nvim-tree.lua',
-	  requires = {
-		  'nvim-tree/nvim-web-devicons', -- optional
-	  },
+					'nvim-tree/nvim-tree.lua',
+					commit = '0a89dcb464b433d2d7b97a8f15d0b608c718dc13', -- master on 01.08.2023
+					requires = {
+									'nvim-tree/nvim-web-devicons', -- optional
+					},
   }
 
 
