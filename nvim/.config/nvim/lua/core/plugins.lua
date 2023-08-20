@@ -85,6 +85,11 @@ return require('packer').startup(function(use)
 					end,
 	}
 
+	use {
+					"nvim-treesitter/nvim-treesitter-context",
+					commit = "14856c9ee6eb0ede0ae9b43782c9be5e7bd946e6",
+	}
+
   -- Add bufferline for holding buffers in tabs
 	use {
 					'akinsho/bufferline.nvim',
