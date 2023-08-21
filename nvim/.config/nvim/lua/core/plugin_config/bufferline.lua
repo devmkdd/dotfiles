@@ -1,5 +1,5 @@
 
-local macchiato = require("catppuccin.palettes").get_palette "macchiato"
+local macchiato = require("catppuccin.palettes").get_palette "mocha"
 local bufferline = require('bufferline')
 bufferline.setup{
 				options = {

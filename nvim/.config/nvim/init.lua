@@ -18,4 +18,5 @@ require('core.keymappings')	  	-- Keymaps
 require('core.plugins')					-- Plugins
 require('core.plugin_config')
 --colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha"
-vim.cmd.colorscheme "catppuccin-macchiato"
+--vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme "catppuccin-mocha"
