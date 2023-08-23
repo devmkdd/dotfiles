@@ -20,3 +20,6 @@ require'lspconfig'.cssmodules_ls.setup {
 }
 
 lsp.setup()
+
+
+require('lsp-progress').setup()

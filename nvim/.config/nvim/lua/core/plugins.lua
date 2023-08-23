@@ -115,7 +115,20 @@ return require('packer').startup(function(use)
 	}
 
 	-- Custom Status bar at the bottom
-  use 'nvim-lualine/lualine.nvim'
+  use {
+					'nvim-lualine/lualine.nvim',
+					requires = {
+									'nvim-tree/nvim-web-devicons',
+									'linrongbin16/lsp-progress.nvim',
+					}
+	}
+	use {
+					'linrongbin16/lsp-progress.nvim',
+					requires = {'nvim-tree/nvim-web-devicons'},
+					config = function()
+									require('lsp-progress').setup()
+					end
+	}
 
 	use {
 					"vinnymeller/swagger-preview.nvim",

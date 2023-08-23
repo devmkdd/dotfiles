@@ -36,8 +36,12 @@ require('lualine').setup {
 													always_visible = false,   -- Show diagnostics even if there are none.
 									}
 					},
-				  lualine_b = {},
-				  lualine_x = {'filetype', 'encoding'},			-- show type of current file and its encoding
+					lualine_b = {},
+				  lualine_x = {
+									'encoding',
+									'filetype',
+									"require('lsp-progress').progress()",
+					},			-- show type of current file and its encoding
 				  lualine_z = {
 									{
 													'branch',
@@ -52,3 +56,10 @@ require('lualine').setup {
 	extensions = { 'nvim-tree' }
 
 }
+
+-- listen lsp-progress event and refresh lualine
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User LspProgressStatusUpdated", {
+    group = "lualine_augroup",
+    callback = require("lualine").refresh,
+})
