@@ -16,3 +16,4 @@ keymap("n", "<leader>lg", ":lua require('telescope').extensions.live_grep_args.l
 
 -- Definitions for nvim-tree
 keymap("n", "<leader>tt", "<cmd>NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>ft", "<cmd>NvimTreeFocus<cr>", opts)
