@@ -11,84 +11,80 @@ end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
+	augroup packer_user_config
+		autocmd!
+		autocmd BufWritePost plugins.lua source <afile> | PackerSync
+	augroup end
 ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
+	return
 end
 
 -- Have packer use a popup window
 packer.init({
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single' })
-      end
-    }
-  }
-)
+	display = {
+		open_fn = function()
+			return require('packer.util').float({ border = 'single' })
+		end
+	}
+})
 
 -- Install your plugins here
 return require('packer').startup(function(use)
-  
-
 	-- My plugins here
-  use 'wbthomason/packer.nvim' 			-- Have packer manage itself
+	use 'wbthomason/packer.nvim' 			-- Have packer manage itself
+	use "nvim-lua/popup.nvim" 				-- An implementation of the Popup API from vim in Neovim
+	use "nvim-lua/plenary.nvim" 			-- Useful lua functions used by lots of plugins
 
-  use "nvim-lua/popup.nvim" 				-- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" 			-- Useful lua functions used by lots of plugins
-  
--- Color Scheme
+	-- Color Scheme
 	use {
-					"catppuccin/nvim",
-					tag = 'v1.3.0',
-					as = "catppuccin"
+		"catppuccin/nvim",
+		tag = 'v1.3.0',
+		as = "catppuccin"
 	}
 
-  use {
-					'nvim-tree/nvim-tree.lua',
-					commit = '0a89dcb464b433d2d7b97a8f15d0b608c718dc13', -- master on 01.08.2023
-					requires = {
-									'nvim-tree/nvim-web-devicons', -- optional
-					},
-  }
+	use {
+		'nvim-tree/nvim-tree.lua',
+		commit = '0a89dcb464b433d2d7b97a8f15d0b608c718dc13', -- master on 01.08.2023
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional
+		},
+	}
 
 
 	-- Telescope as fuzzy finder
 	use {
-					'nvim-telescope/telescope.nvim',
-					tag = '0.1.2',
-					requires = {
-									{'nvim-lua/plenary.nvim'},
-									{
-													'nvim-telescope/telescope-live-grep-args.nvim',
-													commit = '0f75ea809c46af8997c64f49c52e3c641d887885', -- master branch for 05.04.2023
-									},			-- used to pass arguments for filtering like filetype into live grep
-					},
-					config = function()
-									require('telescope').load_extension('live_grep_args')
-					end
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.2',
+		requires = {
+			{'nvim-lua/plenary.nvim'},
+			{
+				'nvim-telescope/telescope-live-grep-args.nvim',
+				commit = '0f75ea809c46af8997c64f49c52e3c641d887885', -- master branch for 05.04.2023
+			},			-- used to pass arguments for filtering like filetype into live grep
+		},
+		config = function()
+			require('telescope').load_extension('live_grep_args')
+		end
 	}
 
 
 	-- LSP
 	use {
-					'VonHeikemen/lsp-zero.nvim',
-					commit = 'f084f4a6a716f55bf9c4026e73027bb24a0325a3', -- branch for v2.x
-					requires = {
-									-- LSP Support
-									{'neovim/nvim-lspconfig'},             -- Required
-								  {'williamboman/mason.nvim'},           -- Optional
-								  {'williamboman/mason-lspconfig.nvim'}, -- Optional
-								  -- Autocompletion
-									{'hrsh7th/nvim-cmp'},     -- Required
-								  {'hrsh7th/cmp-nvim-lsp'}, -- Required
-									{'L3MON4D3/LuaSnip'},     -- Required
+		'VonHeikemen/lsp-zero.nvim',
+		commit = 'f084f4a6a716f55bf9c4026e73027bb24a0325a3', -- branch for v2.x
+		requires = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},             -- Required
+			{'williamboman/mason.nvim'},           -- Optional
+			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+			-- Autocompletion
+			{'hrsh7th/nvim-cmp'},     -- Required
+			{'hrsh7th/cmp-nvim-lsp'}, -- Required
+			{'L3MON4D3/LuaSnip'},     -- Required
   }
 }
 
@@ -107,10 +103,15 @@ return require('packer').startup(function(use)
 					commit = "14856c9ee6eb0ede0ae9b43782c9be5e7bd946e6",
 	}
 
+	use {
+		"lukas-reineke/indent-blankline.nvim",
+		tag = "v3.3.4"
+	}
+
   -- Add bufferline for holding buffers in tabs
 	use {
 					'akinsho/bufferline.nvim',
-					tag = "v4.3.0", 
+					tag = "v4.3.0",
 					requires = 'nvim-tree/nvim-web-devicons'
 	}
 
