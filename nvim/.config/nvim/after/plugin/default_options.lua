@@ -7,10 +7,6 @@ local opt = vim.opt
 -- These keybindings need to be defined before the first is called
 -- otherwise it will default to "\\"
 api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap, silent = true})
-vim.g.mapleader = " "
-vim.g.maplocalleader = ""
-
-
 g.mapleader = " "
 g.localleader = " "
 
@@ -25,9 +21,10 @@ opt.cursorline = true				-- bool: show ot hide the current cursor line
 opt.tabstop = 2
 opt.shiftwidth = 2					-- number: Number of spaces for each step of (auto)indent.
 opt.autoindent = true
-
+opt.ignorecase = true
+opt.smartcase = true
 --[[ Theme ]]
-opt.syntax = "on"						-- str: Allow syntax highlighting
+--opt.syntax = "on"						-- str: Allow syntax highlighting
 
 opt.splitbelow = true				-- bool: horizontal splits should open below
 opt.splitright = true				-- bool: vertical splits should open at the right side

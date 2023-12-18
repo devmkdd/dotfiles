@@ -34,11 +34,11 @@ keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", opts)
 -- == Definitions for telescope in normal mode ==
 
 -- open file search 
---keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 
 -- requires rg to be installed
 -- brew install ripgrep
-keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts) -- default call for live grep without custom arguments
+--keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts) -- default call for live grep without custom arguments
 
 -- open live grep including arguments
 keymap("n", "<leader>lg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",opts)
