@@ -10,6 +10,8 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = ""
 
+-- Mapping to copy selection in visual mode -  '\' is used as escape
+keymap('v', '<leader>y', '\"*y', opts)
 
 -- ==== Normal Mode ==== --
 
