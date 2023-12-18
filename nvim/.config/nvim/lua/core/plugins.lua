@@ -160,6 +160,15 @@ return require('packer').startup(function(use)
 					requires = 'kevinhwang91/promise-async'
 	}
 
+	-- whichkey used to display possible key bindings
+	use {
+		"folke/which-key.nvim",
+		tag = "v1.6.0",
+--		config = function ()
+--		require("config.which-key").setup()
+--		end
+	}
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
