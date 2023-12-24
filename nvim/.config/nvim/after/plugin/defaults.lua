@@ -28,3 +28,14 @@ opt.smartcase = true
 
 opt.splitbelow = true				-- bool: horizontal splits should open below
 opt.splitright = true				-- bool: vertical splits should open at the right side
+
+vim.o.cmdheight = 0					-- hide the command line
+
+vim.cmd [[
+	augroup YankHighlight
+		autocmd!
+		autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+	augroup end
+]]
+
+
