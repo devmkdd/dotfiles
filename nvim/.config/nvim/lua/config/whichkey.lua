@@ -13,10 +13,10 @@ function Module.setup()
 	}
 
 	local options = {
-		mode = "n",		-- normal mode
+		mode = "n",						-- normal mode
 		prefix = "<leader>",
-		buffer = nil, 	-- use global mappings instead of buffer specific
-		silent = true,	-- use silent when creating keymaps
+		buffer = nil, 				-- use global mappings instead of buffer specific
+		silent = true,				-- use silent when creating keymaps
 		noremap = true,
 		nowait = false,
 	}
@@ -27,15 +27,17 @@ function Module.setup()
 		b = {
 			name = "Buffer",
 			c = { "<Cmd>bd!<Cr>", "Close current buffer" },
-			D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
-			},
-	}
+			D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },	
+		},
+		f = {
+			name = "Find",
+			e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+		},
+	},
 
 	whichkey.setup(conf)
 	whichkey.register(keymappings, options)
 
-
-	print("loaded config for whichkey")
 end
 
 return Module

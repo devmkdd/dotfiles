@@ -82,6 +82,19 @@ function M.setup()
 			end,
 		}
 
+		use {
+			'nvim-tree/nvim-tree.lua',
+			commit = '0a89dcb464b433d2d7b97a8f15d0b608c718dc13', -- master on 01.08.2023
+			requires = {
+				'nvim-tree/nvim-web-devicons', -- optional
+			},
+			config = function()
+				require("config.nvimtree").setup()
+			end,
+		}
+
+
+
     if packer_bootstrap then
       print "Restart Neovim required after installation!"
       require("packer").sync()
