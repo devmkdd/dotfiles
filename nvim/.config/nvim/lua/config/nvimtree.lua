@@ -14,8 +14,6 @@ function Module.setup()
 			custom = { ".git" },
 			dotfiles = false,
 		},
-
-		print("nvim-tree installed")
 	}
 	end
 

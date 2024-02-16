@@ -74,6 +74,15 @@ function M.setup()
 		}
 
 		use {
+			'akinsho/bufferline.nvim',
+			tag = "v4.3.0",
+			requires = 'nvim-tree/nvim-web-devicons',
+			config = function()
+				require("config.bufferline").setup()
+			end,
+	}
+
+		use {
 			"SmiteshP/nvim-gps",
 			requires = "nvim-treesitter/nvim-treesitter",
 			module = "nvim-gps",
