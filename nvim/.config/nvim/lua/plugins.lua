@@ -6,6 +6,10 @@ function M.setup()
 
   -- packer.nvim configuration
   local conf = {
+		profile = {
+			enable = true,
+			threshold = 0,			--- defines the allowed time in ms for a plugin to be loaded
+		},
     display = {
       open_fn = function()
         return require("packer.util").float { border = "rounded" }
@@ -47,6 +51,8 @@ function M.setup()
 		-- Which-Key for showing keymappings
 		use {
 			"folke/which-key.nvim",
+			--event = "VimEnter",							-- only load after startup
+			cmd = "WhichKey",
 			config = function()
 				require("config.whichkey").setup()
 			end,
@@ -97,6 +103,7 @@ function M.setup()
 			requires = {
 				'nvim-tree/nvim-web-devicons', -- optional
 			},
+			cmd = { "NvimTreeToggle" }, 			-- only load when required -> on executing command
 			config = function()
 				require("config.nvimtree").setup()
 			end,
