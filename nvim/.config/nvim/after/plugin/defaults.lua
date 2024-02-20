@@ -38,4 +38,7 @@ vim.cmd [[
 	augroup end
 ]]
 
-
+-- options for customising the search
+opt.path:remove "/usr/include"	-- exlude this folder from file searches
+opt.path:append "**"						-- include subdirectories of the current folder
+opt.wildignorecase = true				-- searches should ignore the case
