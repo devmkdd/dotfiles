@@ -51,8 +51,8 @@ function M.setup()
 		-- Which-Key for showing keymappings
 		use {
 			"folke/which-key.nvim",
-			--event = "VimEnter",							-- only load after startup
-			cmd = "WhichKey",
+			-- event = "VimEnter",							-- only load after startup
+	--		cmd = "WhichKey",
 			config = function()
 				require("config.whichkey").setup()
 			end,
@@ -68,6 +68,7 @@ function M.setup()
 			requires = { "nvim-tree/nvim-web-devicons" },
 		}
 
+		-- Treesitter for syntac highlighting
 		use {
 			"nvim-treesitter/nvim-treesitter",
 			run = function() 
@@ -97,6 +98,7 @@ function M.setup()
 			end,
 		}
 
+		-- nvim-tree as a file explorer
 		use {
 			'nvim-tree/nvim-tree.lua',
 			commit = '0a89dcb464b433d2d7b97a8f15d0b608c718dc13', -- master on 01.08.2023
@@ -109,7 +111,18 @@ function M.setup()
 			end,
 		}
 
-
+		-- telescope as fuzzy file searcher
+		use {
+			'nvim-telescope/telescope.nvim',
+			tag = '0.1.2',
+			requires = {
+				{'nvim-lua/plenary.nvim'},
+				{
+					'nvim-telescope/telescope-live-grep-args.nvim',
+					commit = '0f75ea809c46af8997c64f49c52e3c641d887885', -- master branch for 05.04.2023
+				},
+			},
+		}
 
     if packer_bootstrap then
       print "Restart Neovim required after installation!"

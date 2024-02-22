@@ -31,21 +31,19 @@ keymap("n", "j", "v:count == 0 ? 'gj' : 'j'",expr_opts)
 -- Cancel the higlighting of search results when canceling search
 keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", opts)
 
+
+
 -- == Definitions for telescope in normal mode ==
+keymap("n", "<leader>fc", ":lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", { desc = "Find word under cursor"})
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files (Telescope)" })
+keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", { desc = "Find Text (Telescope)"})
+keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent Files (Telescope)" })
+keymap("v", "<leader>fs", ":lua require('telescope-live-grep-args.shortcuts').grep_visual_selection()<cr>", { desc = "Find selection"})
 
--- open file search 
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-
--- requires rg to be installed
--- brew install ripgrep
---keymap("n", "<leader>lg", "<cmd>Telescope live_grep<cr>", opts) -- default call for live grep without custom arguments
-
--- open live grep including arguments
-keymap("n", "<leader>lg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",opts)
 
 -- == nvim-tree == --
-keymap("n", "<leader>tt", "<cmd>NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>ft", "<cmd>NvimTreeFocus<cr>", opts)
+--keymap("n", "<leader>tt", "<cmd>NvimTreeToggle<cr>", opts)
+--keymap("n", "<leader>ft", "<cmd>NvimTreeFocus<cr>", opts)
 
 
 
