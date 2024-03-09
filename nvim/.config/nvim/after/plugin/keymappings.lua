@@ -34,11 +34,11 @@ keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", opts)
 
 
 -- == Definitions for telescope in normal mode ==
-keymap("n", "<leader>fc", ":lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", { desc = "Find word under cursor"})
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files (Telescope)" })
-keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", { desc = "Find Text (Telescope)"})
-keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent Files (Telescope)" })
-keymap("v", "<leader>fs", ":lua require('telescope-live-grep-args.shortcuts').grep_visual_selection()<cr>", { desc = "Find selection"})
+--keymap("n", "<leader>fc", ":lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>", { desc = "Find word under cursor"})
+--keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files (Telescope)" })
+--keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", { desc = "Find Text (Telescope)"})
+--keymap("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent Files (Telescope)" })
+--keymap("v", "<leader>fs", ":lua require('telescope-live-grep-args.shortcuts').grep_visual_selection()<cr>", { desc = "Find selection"})
 
 
 -- == nvim-tree == --
