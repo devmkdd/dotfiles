@@ -7,6 +7,6 @@ return {
 	end,
 	integrations = {
 		treesitter = true,
-		neotree = tre,
+		neotree = true,
 	}
 }
