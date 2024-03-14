@@ -7,7 +7,7 @@ return {
 	sync_install = false,
 
 	build = ":TSUpdate", -- executed on plugin install
-	config = function() 
+	config = function()
 		local config = require("nvim-treesitter.configs")
 		config.setup({
 
@@ -20,18 +20,18 @@ return {
 				"lua",
 				"markdown",
 				"markdown_inline",
+				"mermaid",
 				"swift",
 				"tsx",
 				"typescript",
-				"yaml"
+				"yaml",
 			},
 
 			sync_install = false, -- don't wait for parsers to be installed
 
 			highlight = {
-				enable = true,		-- required or treesitter will not be used
+				enable = true, -- required or treesitter will not be used
 			},
 		})
-	end
+	end,
 }
-
