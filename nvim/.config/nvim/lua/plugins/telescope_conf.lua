@@ -23,6 +23,7 @@ return {
 			keymap("n", "<leader>ft", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", { desc = "Find Text (Telescope)"})
 			vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent Files (Telescope)" })
 			keymap("v", "<leader>fs", ":lua require('telescope-live-grep-args.shortcuts').grep_visual_selection()<cr>", { desc = "Find selection"})
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 
 		end,
 
