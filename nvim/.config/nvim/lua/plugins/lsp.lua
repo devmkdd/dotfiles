@@ -23,10 +23,21 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+
+			-- load lsp capabilities for defined language servers
+			-- have to be passed 
+			local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.marksman.setup({{}})
-			lspconfig.tsserver.setup({})
+			lspconfig.lua_ls.setup({
+				capabilities = cmp_capabilities
+			})
+			lspconfig.marksman.setup({
+				capabilities = cmp_capabilities
+			})
+			lspconfig.tsserver.setup({
+				capabilities = cmp_capabilities
+			})
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, { desc = "hover" })
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "go to definition" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code actions" })

@@ -2,6 +2,9 @@
 
 return {
 	{
+    "hrsh7th/cmp-nvim-lsp" -- used to provide completion from lsp servers via none-ls
+  },
+	{
 		"L3MON4D3/LuaSnip",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
@@ -36,12 +39,14 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 
+				-- define a list of completion sources
 				sources = cmp.config.sources({
-					--		{ name = "nvim_lsp" },
+					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
 					-- { name = 'ultisnips' }, -- For ultisnips users.
 					-- { name = 'snippy' }, -- For snippy users.
-				}, {
+				},
+				{
 					{ name = "buffer" },
 				}),
 			})
