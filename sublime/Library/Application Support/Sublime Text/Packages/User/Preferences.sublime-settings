@@ -1,9 +1,0 @@
-{
-	"ignored_packages":
-	[
-		"Vintage",
-	],
-	"theme": "Afterglow-magenta.sublime-theme",
-	"color_scheme": "Catppuccin Macchiato.sublime-color-scheme",
-	"tabs_small": true,
-}
