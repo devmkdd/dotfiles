@@ -15,5 +15,11 @@ return {
 				},
 			},
 		})
-  end
+  end,
+	keys = {
+		-- Search within tags
+		{ "<leader>nt", "<cmd>ZkTags<cr>", desc = "Notes: Search by Tag" },
+		{ "<leader>nn", "<cmd>ZkNotes<cr>", desc = "Notes: Search by Notes" },
+	},
+
 }
