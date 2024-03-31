@@ -14,6 +14,7 @@ return {
 			-- ensure to install selected parsers
 			ensure_installed = {
 				"css",
+				"go",
 				"html",
 				"json",
 				"kotlin",
@@ -31,6 +32,7 @@ return {
 
 			highlight = {
 				enable = true, -- required or treesitter will not be used
+				additional_vim_regex_highlighting = { "markdown" },
 			},
 		})
 	end,
