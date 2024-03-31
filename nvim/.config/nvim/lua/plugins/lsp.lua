@@ -12,11 +12,13 @@ return {
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"gopls",			-- ls for Go
 					"jsonls",			-- ls for JSON
 					"kotlin_language_server", -- kotlin
 					"lua_ls",			-- ls for lua
 					"marksman",		-- ls for markdown
 					"tsserver",		-- ls for js/ts
+					"yamlls",			-- redhat ls for yaml
 				},
 			})
 		end,
@@ -31,6 +33,22 @@ return {
 			local utils = require('lspconfig/util')
 
 			local lspconfig = require("lspconfig")
+
+			lspconfig.gopls.setup({
+				capabilities = cmp_capabilities,
+				filetypes = { "go", "gomod", "gowork", "gotmpl"},
+				root_dir = utils.root_pattern("go.work", "go.mod", ".git"),
+				settings = {
+					gopls = {
+						completeUnimported = true, -- import packages when using autocomplete
+						usePlaceholders = true, 	-- adds placeholders for any function parameters
+						analyses = {
+							unusedparams = true,	-- warnings for unused parameters
+						}
+					}
+				}
+			})
+
 			lspconfig.lua_ls.setup({
 				capabilities = cmp_capabilities
 			})
@@ -38,6 +56,10 @@ return {
 				capabilities = cmp_capabilities
 			})
 			lspconfig.tsserver.setup({
+				capabilities = cmp_capabilities
+			})
+
+			lspconfig.yamlls.setup({
 				capabilities = cmp_capabilities
 			})
 
