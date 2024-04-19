@@ -13,6 +13,7 @@ return {
 
 			-- ensure to install selected parsers
 			ensure_installed = {
+				"bash",
 				"css",
 				"go",
 				"html",
@@ -22,10 +23,12 @@ return {
 				"markdown",
 				"markdown_inline",
 				"mermaid",
+				"regex",
 				"swift",
 				"tsx",
 				"typescript",
 				"yaml",
+				"vim"
 			},
 
 			sync_install = false, -- don't wait for parsers to be installed
