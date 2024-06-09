@@ -4,6 +4,8 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config.default_cursor_style = 'SteadyUnderline'
+
 config.color_scheme = 'Catppuccin Frappe'
 
 config.font = wezterm.font("Hack Nerd Font", {weight="Regular", stretch="Normal", style="Normal"})
