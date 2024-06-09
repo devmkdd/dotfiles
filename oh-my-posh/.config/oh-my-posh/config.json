@@ -34,19 +34,20 @@
           "type": "path",
           "style": "diamond",
           "foreground": "p:yellow",
-          "template": " {{ .Path }} ",
+          "template": " {{ .Path }}",
           "properties": {
             "style": "agnoster_short"
           }
         },
-          {
-            "foreground": "p:peach",
-            "style": "plain",
-            "template": "\u276f",
-            "type": "text"
-          }
-
-
+				{
+					"background": "p:base",
+					"foreground": "p:peach",
+					"leading_diamond": "\ue0b6",
+					"style": "diamond",
+					"template": "\u276f",
+					"trailing_diamond": "\ue0b4",
+					"type": "text"
+				}
       ]
     }
   ],
