@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+				{
+          "foreground": "p:blue",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }} ",
+          "style": "plain",
+          "type": "git"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "p:yellow",
+          "template": " {{ .Path }} ",
+          "properties": {
+            "style": "agnoster_short"
+          }
+        },
+          {
+            "foreground": "p:peach",
+            "style": "plain",
+            "template": "\u276f",
+            "type": "text"
+          }
+
+
+      ]
+    }
+  ],
+  "palette": {
+		"overlay0": "#737994",
+		"surface1": "#51576d",
+		"crust": "#232634",
+		"text": "#c6d0f5",
+    "base": "#303446",
+    "blue": "#8CAAEE",
+    "closer": "p:os",
+    "green": "#a6d189",
+    "lavender": "#BABBF1",
+    "os": "#ACB0BE",
+    "peach": "#ef9f76",
+    "pink": "#F4B8E4",
+    "yellow": "#e5c890",
+		"sapphir": "#85c1dc",
+		"teal": "#81c8be",
+		"mauve": "#ca9ee6",
+		"flamingo": "#eebebe"
+  }
+}
