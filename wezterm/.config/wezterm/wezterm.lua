@@ -14,7 +14,7 @@ function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
     return 'Catppuccin Frappe'
   else
-    return 'Catppuccin Light'
+    return 'Catppuccin Latte'
   end
 end
 
@@ -37,5 +37,5 @@ config.send_composed_key_when_right_alt_is_pressed = true
 config.hide_tab_bar_if_only_one_tab = true
 
 -- set decoration to allow resizing but hiding the window bar
-
+config.window_decorations = "RESIZE"
 return config
