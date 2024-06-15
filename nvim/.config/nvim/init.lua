@@ -28,16 +28,28 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+
+-- adjust color scheme to os setting
+-- seems to be required to be set at the end
 require("lazy").setup("plugins")
 
--- IMPORTS
---require('core.variables')				-- Variables
---require('core.plugins')					-- Plugins
--- require('core.plugin_config')
---colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha"
---vim.cmd.colorscheme "catppuccin-macchiato"
---vim.cmd.colorscheme "catppuccin-mocha"
---
---
---
 --require("plugins").setup()
+local dn = require('dark_notify')
+dn.run({
+    schemes = {
+      -- you can use a different colorscheme for each
+      dark = {
+				colorscheme = "catppuccin-frappe",
+			},
+      -- even a different `set background=light/dark` setting or lightline theme
+      -- if you use lightline, you may want to configure lightline themes,
+      -- even if they're the same one, especially if the theme reacts to :set bg
+      light = {
+        colorscheme = "catppuccin-latte",
+      }
+    },
+})
+
+-- Match the system
+dn.update()
