@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# see catppuccin frappé pallete for colors
+# -> https://catppuccin.com/palette
+
+
+options=(
+	style=round
+	width=8.0
+	hidpi=on
+	active_color=0xffe5c890 # yellow
+	#inactive not set to prevent a drawn boarder
+)
+borders "${options[@]}"
+
+
