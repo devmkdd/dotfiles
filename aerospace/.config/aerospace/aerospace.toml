@@ -88,10 +88,10 @@ alt-period = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+cmd-alt-h = 'focus left'
+cmd-alt-j = 'focus down'
+cmd-alt-k = 'focus up'
+cmd-alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -111,13 +111,15 @@ alt-ctrl-2 = ['workspace 2', '''exec-and-forget osascript <<EOF
     display notification "workspace 2" with title "aerospace"
 EOF''']
 
-alt-ctrl-3 = 'workspace 3'
+alt-ctrl-3 = ['workspace 3', '''exec-and-forget osascript <<EOF
+    display notification "workspace 3" with title "aerospace"
+EOF''']
 alt-ctrl-4 = 'workspace 4'
 alt-ctrl-5 = 'workspace 5'
 alt-ctrl-6 = 'workspace 6'
 alt-ctrl-7 = 'workspace 7'
 alt-ctrl-8 = 'workspace 8'
-alt-9 = 'workspace 9'
+alt-ctrl-9 = 'workspace 9'
 alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
 alt-ctrl-b = 'workspace B'
 alt-c = 'workspace C'
