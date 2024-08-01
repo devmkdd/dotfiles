@@ -25,6 +25,7 @@ return {
 				"mermaid",
 				"regex",
 				"swift",
+				"toml",
 				"tsx",
 				"typescript",
 				"yaml",
