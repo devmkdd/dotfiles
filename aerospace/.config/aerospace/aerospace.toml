@@ -124,6 +124,7 @@ ctrl-alt-8 = 'workspace 8'
 ctrl-alt-9 = 'workspace 9'
 ctrl-alt-o = 'workspace Outlook'
 ctrl-alt-t = 'workspace Teams'
+ctrl-alt-w = 'workspace Webex'
 
 
 cmd-ctrl-alt-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -135,8 +136,9 @@ cmd-ctrl-alt-6 = ['move-node-to-workspace 6', 'workspace 6']
 cmd-ctrl-alt-7 = ['move-node-to-workspace 7', 'workspace 7']
 cmd-ctrl-alt-8 = ['move-node-to-workspace 8', 'workspace 8']
 cmd-ctrl-alt-9 = ['move-node-to-workspace 9', 'workspace 9']
-cmd-ctrl-alt-o = ['move-node-to-workspace o', 'workspace o']
-cmd-ctrl-alt-t = ['move-node-to-workspace t', 'workspace t']
+cmd-ctrl-alt-o = ['move-node-to-workspace Outlook', 'workspace Outlook']
+cmd-ctrl-alt-t = ['move-node-to-workspace Teams', 'workspace Teams']
+cmd-ctrl-alt-w = ['move-node-to-workspace Webex', 'workspace Webex']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -144,7 +146,7 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+alt-shift-comma = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
